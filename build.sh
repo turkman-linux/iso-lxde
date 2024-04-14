@@ -14,7 +14,8 @@ function build(){
     bash -ex mkiso.sh
     mv turkman.iso /output/turkman-$variant$suffix.iso
     echo "##### $(date) #####" > /output/turkman-$variant$suffix.revdep-rebuild
-    chroot rootfs ymp rbd --no-color 2>/dev/null | tee -a /output/turkman-$variant$suffix.revdep-rebuild    cd ..
+    chroot rootfs ymp rbd --no-color 2>/dev/null | tee -a /output/turkman-$variant$suffix.revdep-rebuild
+    cd ..
     rm -rf $variant$suffix
 }
 for variant in lxde; do
